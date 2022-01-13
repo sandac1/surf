@@ -639,6 +639,29 @@ public class Surf {
 
     }
 
+    static class Piles{
+        java.util.List<Obstacle> obstacles;
+        Piles(){}
+    }
+
+    static class PilesFactory{
+
+        Surf surf;
+
+        PilesFactory(Surf s){
+            surf = s;
+        }
+
+        Piles getSingleObstacles(){
+            Piles piles = new Piles();
+            piles.obstacles = new ArrayList<>();
+            Obstacle obstacle = new Obstacle();
+            obstacle.image = surf.imgFactory.smallTrees[0];
+            piles.obstacles.add(obstacle);
+            return piles;
+        }
+
+    }
 
 
     public static void main(String[] args) {
